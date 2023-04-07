@@ -1,11 +1,10 @@
 <?php
 
-namespace douggonsouza\permission\models;
+namespace douggonsouza\genpermissions\models;
 
-use douggonsouza\mvc\model\model;
-use douggonsouza\mvc\model\modelInterface;
-
-class permission_type extends model implements modelInterface
+use douggonsouza\mvc\model\table;
+use douggonsouza\mvc\model\tableInterface;
+class permission_type extends table implements tableInterface
 {
     public $table = 'permissions_types';
     public $key   = 'permission_type_id';

@@ -1,11 +1,11 @@
 <?php
 
-namespace douggonsouza\permission\models;
+namespace douggonsouza\genpermissions\models;
 
-use douggonsouza\mvc\model\model;
-use douggonsouza\mvc\model\modelInterface;
+use douggonsouza\mvc\model\table;
+use douggonsouza\mvc\model\tableInterface;
 
-class paper extends model implements modelInterface
+class paper extends table implements tableInterface
 {
     public $table = 'papers';
     public $key   = 'paper_id';

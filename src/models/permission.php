@@ -1,15 +1,15 @@
 <?php
 
-namespace douggonsouza\permission\models;
+namespace douggonsouza\genpermissions\models;
 
-use douggonsouza\mvc\model\model;
-use douggonsouza\mvc\model\modelInterface;
-use douggonsouza\permission\models\menu;
-use douggonsouza\permission\models\paper;
-use douggonsouza\permission\models\permission_type;
-use douggonsouza\mvc\model\connection\conn;
+use douggonsouza\mvc\model\table;
+use douggonsouza\mvc\model\tableInterface;
+use douggonsouza\genpermissions\models\menu;
+use douggonsouza\genpermissions\models\paper;
+use douggonsouza\genpermissions\models\genpermissions_type;
+use douggonsouza\mvc\model\resource\source;
 
-class permission extends model implements modelInterface
+class permission extends table implements tableInterface
 {
     public $table = 'permissions';
     public $key   = 'permission_id';
@@ -32,11 +32,11 @@ class permission extends model implements modelInterface
      */
     public function paper()
     {
-        if(!$this->getField('paper_id')){
+        if(!$this->get('paper_id')){
             return null;
         }
 
-        return new paper((int) $this->getField('paper_id'));
+        return new paper((int) $this->get('paper_id'));
     }
     
     /**
@@ -46,11 +46,11 @@ class permission extends model implements modelInterface
      */
     public function menu()
     {
-        if(!$this->getField('paper_id')){
+        if(!$this->get('paper_id')){
             return null;
         }
 
-        return new menu((int) $this->getField('paper_id'));
+        return new menu((int) $this->get('paper_id'));
     }
     
     /**
@@ -60,11 +60,11 @@ class permission extends model implements modelInterface
      */
     public function permissionType()
     {
-        if(!$this->getField('paper_id')){
+        if(!$this->get('paper_id')){
             return null;
         }
 
-        return new permission_type((int) $this->getField('paper_id'));
+        return new permission_type((int) $this->get('paper_id'));
     }
 
     
@@ -103,7 +103,7 @@ class permission extends model implements modelInterface
             $paperId
         );
 
-        return conn::selectAsArray($sql);
+        return (new source($sql))->allArray();
     }
 
     /**

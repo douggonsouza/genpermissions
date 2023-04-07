@@ -1,15 +1,14 @@
 <?php
 
-namespace douggonsouza\permission\controls;
+namespace douggonsouza\genpermissions\controls;
 
 use douggonsouza\propertys\propertysInterface;
 use douggonsouza\propertys\propertys;
-use douggonsouza\permission\models\permission as permissionModel;
 use douggonsouza\mvc\control\controllers;
 use douggonsouza\mvc\control\controllersInterface;
 use douggonsouza\logged\logged;
 use douggonsouza\logged\models\user;
-use douggonsouza\permission\permission;
+use douggonsouza\genpermissions\permission;
 use douggonsouza\mvc\view\views;
 
 class sidebar extends controllers implements controllersInterface

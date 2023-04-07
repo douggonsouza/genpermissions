@@ -1,9 +1,9 @@
 <?php
 
-namespace douggonsouza\permission\controls;
+namespace douggonsouza\genpermissions\controls;
 
 use douggonsouza\propertys\propertysInterface;
-use douggonsouza\permission\models\menu;
+use douggonsouza\genpermissions\models\menu;
 
 class menus
 {

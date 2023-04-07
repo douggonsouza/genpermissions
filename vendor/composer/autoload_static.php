@@ -22,6 +22,16 @@ class ComposerStaticInitb5bf8f08b22a3bf9aa08c3ba73f0663b
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'douggonsouza\\genpermissions\\controls\\menus' => __DIR__ . '/../..' . '/src/controls/menus.php',
+        'douggonsouza\\genpermissions\\controls\\papers' => __DIR__ . '/../..' . '/src/controls/papers.php',
+        'douggonsouza\\genpermissions\\controls\\permissions' => __DIR__ . '/../..' . '/src/controls/permissions.php',
+        'douggonsouza\\genpermissions\\controls\\permissions_types' => __DIR__ . '/../..' . '/src/controls/permissions_types.php',
+        'douggonsouza\\genpermissions\\controls\\sidebar' => __DIR__ . '/../..' . '/src/controls/sidebar.php',
+        'douggonsouza\\genpermissions\\models\\menu' => __DIR__ . '/../..' . '/src/models/menu.php',
+        'douggonsouza\\genpermissions\\models\\paper' => __DIR__ . '/../..' . '/src/models/paper.php',
+        'douggonsouza\\genpermissions\\models\\permission' => __DIR__ . '/../..' . '/src/models/permission.php',
+        'douggonsouza\\genpermissions\\models\\permission_type' => __DIR__ . '/../..' . '/src/models/permission_type.php',
+        'douggonsouza\\genpermissions\\permission' => __DIR__ . '/../..' . '/src/permission.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

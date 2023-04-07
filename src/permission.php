@@ -1,11 +1,11 @@
 <?php
 
-namespace douggonsouza\permission;
+namespace douggonsouza\genpermissions;
 
-use douggonsouza\permission\controls\permissions;
-use douggonsouza\permission\controls\permissions_types;
-use douggonsouza\permission\controls\menus;
-use douggonsouza\permission\controls\papers;
+use douggonsouza\genpermissions\controls\permissions;
+use douggonsouza\genpermissions\controls\permissions_types;
+use douggonsouza\genpermissions\controls\menus;
+use douggonsouza\genpermissions\controls\papers;
 
 abstract class permission
 {    

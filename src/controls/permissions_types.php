@@ -1,9 +1,9 @@
 <?php
 
-namespace douggonsouza\permission\controls;
+namespace douggonsouza\genpermissions\controls;
 
 use douggonsouza\propertys\propertysInterface;
-use douggonsouza\permission\models\permission_type;
+use douggonsouza\genpermissions\models\genpermissions_type;
 
 class permissions_types
 {
