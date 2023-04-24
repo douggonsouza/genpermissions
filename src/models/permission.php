@@ -6,7 +6,7 @@ use douggonsouza\mvc\model\table;
 use douggonsouza\mvc\model\tableInterface;
 use douggonsouza\genpermissions\models\menu;
 use douggonsouza\genpermissions\models\paper;
-use douggonsouza\genpermissions\models\genpermissions_type;
+use douggonsouza\genpermissions\models\permission_type;
 use douggonsouza\mvc\model\resource\source;
 
 class permission extends table implements tableInterface
@@ -14,6 +14,10 @@ class permission extends table implements tableInterface
     public $table = 'permissions';
     public $key   = 'permission_id';
     public $options = "SELECT permission_id as value, name as label FROM permissions %s;";
+
+    const PERMISSION_TYPE_UPDATE = 'update';
+    const PERMISSION_TYPE_DELETE = 'delete';
+    const PERMISSION_TYPE_VIEW   = 'view';
 
     /**
      * options
@@ -77,9 +81,14 @@ class permission extends table implements tableInterface
      */
     public function pages(int $paperId)
     {
+
         if(!isset($paperId) || empty($paperId)){
             return null;
         }
+
+        $permissionTypes = new permission_type(array(
+            'name' => self::PERMISSION_TYPE_VIEW
+        ));
 
         $sql = sprintf(
             "SELECT
@@ -95,11 +104,12 @@ class permission extends table implements tableInterface
             JOIN menus mn ON mn.menu_id = p.menu_id AND mn.active = 'yes'
             WHERE
                 p.active = 'yes'
-                AND p.permission_type_id = 4
+                AND p.permission_type_id = %d
                 AND p.paper_id IN (%d)
             ORDER BY 
             	mn.sequence_id,
                 p.name;",
+            $permissionTypes->get('permission_type_id'),
             $paperId
         );
 

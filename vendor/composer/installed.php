@@ -3,7 +3,7 @@
         'name' => 'douggonsouza/genpermissions',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '013e6c80398591b1077b07f943db260e8554b8ab',
+        'reference' => '8fb823ba9ab4eff89fea1bec6f5cd18bb50b4af9',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'douggonsouza/genpermissions' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '013e6c80398591b1077b07f943db260e8554b8ab',
+            'reference' => '8fb823ba9ab4eff89fea1bec6f5cd18bb50b4af9',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

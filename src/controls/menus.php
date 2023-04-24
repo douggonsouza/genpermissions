@@ -3,10 +3,30 @@
 namespace douggonsouza\genpermissions\controls;
 
 use douggonsouza\propertys\propertysInterface;
+use douggonsouza\mvc\control\controllersInterface;
+use douggonsouza\mvc\control\controllers;
 use douggonsouza\genpermissions\models\menu;
+use douggonsouza\mvc\view\views;
+use douggonsouza\routes\router;
 
-class menus
+class menus extends controllers implements controllersInterface
 {
+    /**
+     * Method main
+     *
+     * @param propertysInterface $info [explicite description]
+     *
+     * @return void
+     */
+    public function main(propertysInterface $info = null)
+    {
+        if(isset($info->POST) && $info->POST['pub_key'] == 'bWVudSBjb250cm9sbGVy'){
+        
+        }
+
+        return views::view(null, $info);
+    }
+
     public function save(propertysInterface $propertys)
     {
         $menu = new menu();
